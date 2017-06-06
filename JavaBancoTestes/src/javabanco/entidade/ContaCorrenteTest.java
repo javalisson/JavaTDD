@@ -46,5 +46,19 @@ public class ContaCorrenteTest {
 		cc.credito(0.2f);
 		assertEquals(0.3f, cc.saldo(), 0.0f);
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testCreditoValorNegativo() {
+		ContaCorrente cc = new ContaCorrente();
+		
+		cc.credito(-10);		
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testDebitoValorNegativo() {
+		ContaCorrente cc = new ContaCorrente();
+		
+		cc.debito(-10);		
+	}
 
 }
